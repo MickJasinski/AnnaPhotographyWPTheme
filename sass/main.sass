@@ -1,39 +1,184 @@
 // Imports
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700')
 
+
 // Variables
-    // colors
-$link: orange
+
+$link: #767676
+$linkH: #bbb
 $text: #333
 
+$dark: #424242
+$light: #fbfbfb
+$lite: #eee
+
+$trans: rgba(240,240,240,.96)
+
+
 // General
+
+#wpadminbar
+    display: none
+
+*
+    margin: 0
+    padding: 0
+
 body
     font-family: 'Lato', sans-serif
     color: $text
 
-a:link, a:visited
-    color: $link
-
 .container
-    max-width: 1200px  
+    max-width: 1600px  
     padding: 0 20px
     margin: 0 auto
 
-// Navigation
-.dt-nav
+a
+    transition: .3s ease
+
+a:link, a:visited
+    text-decoration: none
+    color: $link
+
+a:hover
+    color: $linkH
+
+ul li 
+    list-style: none
+
+
+// Logo
+
+.logo
+    margin-top: -10px
     display: block
+    object-fit: cover
+    object-position: center
+    width: 260px
+    float: left
+
+
+// Navigation
+
+//  -desktop
+.desktop-nav
+    display: block
+    text-align: right
+    margin-bottom: 30px
+    padding-top: 10px
+    position: relative
+    left: 20px
     ul
         margin: 0
         padding: 0
-        li 
+        li
+            display: inline
             list-style: none
-            float: left
+            transition: .3s ease
+            a 
+                display: inline-block
+                border: 1px solid white
+                border-radius: 2px
+                padding: 5px 20px
+                margin-left: 2px
+                text-transform: uppercase
+            a:last-od-type
+                padding-right: none
+                margin-left: none
+        li:hover a
+                border: 1px solid $lite
+                color: $link
     ul:before, ul:after
         content: ""
         display: table
     ul:after
         clear: both
-    ul
-        *zoom: 1
+
+
+//  -mobile
+.burger, .mobile-nav
+        display: none
+
+@media (max-width: 767px)
+
+    .mobile-nav
+        z-index: 1000
+        display: block
+        position: fixed
+        top: 0
+        right: -260px
+        width: 260px
+        height: 100vh
+        background: $trans
+        // box-shadow: 0 10px 16px #aaa
+        transition: .3s ease
+        h3
+            text-align: center
+            padding-top: 60px
+        ul
+            margin: 0 
+            padding: 50px 0
+            text-align: center
+            
+            li 
+                display: block
+                width: 70%
+                margin: 0 auto
+                padding: 20px
+                color: $dark
+                border-bottom: 1px solid $linkH
+                text-transform: uppercase
+                a
+                    text-decoration: none
+                    
+            li:last-of-type
+                border-bottom: none
+
+    .social-box
+        display: flex
+        justify-content: center
+        .social
+            position: block
+            margin: 10px
+            display: block
+            object-fit: cover
+            object-position: center
+            width: 60px
+
+    .active
+        right: 0
+
+    .desktop-nav
+        display: none
+    .burger
+        display: block
+        position: fixed
+        top: 20px
+        right: 20px
+        line-height: 30px
+        font-size: 2em
+        padding: 0
+        box-sizing: border-box
+        cursor: pointer
+        background: none
+        border: none
+
+        p
+            padding: 0
+            margin: 0
+            position: relative
+            top: -1px
+
+// Slick carousel
+
+.slideshow
+    img 
+        height: 600px
+        margin: 1px;
+
+
+
+
+
 
      

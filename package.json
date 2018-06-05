@@ -1,7 +1,7 @@
 {
-  "name": "blank",
+  "name": "anna_photography",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minimalistic bespoke theme developed for Anna's portfolio website.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,11 +11,12 @@
   },
   "keywords": [],
   "author": {
-    "name": "Michal Jasinski",
+    "name": "micky.click",
     "url": "http://micky.click"
   },
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.0",
+    "slick-carousel": "^1.8.1"
   }
 }
