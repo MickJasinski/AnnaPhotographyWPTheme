@@ -47,15 +47,25 @@ ul li
     list-style: none
 
 
+//           ========== HEADER ==========
+
+header 
+    display: block
+    height: 80px
+
 // Logo
 
 .logo
-    margin-top: -10px
     display: block
     object-fit: cover
     object-position: center
     width: 260px
     float: left
+
+@media (max-width: 767px) 
+    .logo
+        width: 200px
+
 
 
 // Navigation
@@ -82,12 +92,15 @@ ul li
                 padding: 5px 20px
                 margin-left: 2px
                 text-transform: uppercase
+                color: $text
             a:last-od-type
                 padding-right: none
                 margin-left: none
         li:hover a
                 border: 1px solid $lite
-                color: $link
+                color: $text
+        .current-menu-item a, .current-menu-item a:hover
+            color: red
     ul:before, ul:after
         content: ""
         display: table
@@ -169,12 +182,19 @@ ul li
             position: relative
             top: -1px
 
+
+//           ========== BODY ==========
+
+.container
+    padding: 0 10px
+
 // Slick carousel
 
 .slideshow
+    display: block
     img 
-        height: 600px
-        margin: 1px;
+        height: calc(90vh - 112px)
+        margin: 1px
 
 
 
