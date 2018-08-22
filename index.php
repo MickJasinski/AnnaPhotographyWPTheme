@@ -2,22 +2,7 @@
 
 get_header(); ?>
 
-<div class="slideshow">
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/1.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/2.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/3.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/4.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/5.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/6.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/7.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/8.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/9.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/10.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/11.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/12.jpg" alt="Anna Photography | Family & Portrait"></div>
-    <div><img src="/wp-content/themes/AnnaPhotography/imgs/carousel/13.jpg" alt="Anna Photography | Family & Portrait"></div>
-</div>
-
+<!-- The loop -->
 <?php
 
 if (have_posts()) :
@@ -33,7 +18,6 @@ if (have_posts()) :
 
     endif; ?>
 
-    <div class="hit"></div>
 
 
 <?php

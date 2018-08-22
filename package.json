@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.9.0",
+    "sass-autoprefixer": "^1.0.1",
     "slick-carousel": "^1.8.1"
   }
 }

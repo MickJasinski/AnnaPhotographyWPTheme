@@ -9,13 +9,16 @@ $linkH: #bbb
 $text: #333
 
 $dark: #424242
-$light: #fbfbfb
+$darkL: #676767
+$light: #f8f8f8
 $lite: #eee
 
 $trans: rgba(240,240,240,.96)
+$transBlack: rgba(0,0,0,.5)
 
 
-// General
+// Global
+
 
 #wpadminbar
     display: none
@@ -29,9 +32,18 @@ body
     color: $text
 
 .container
-    max-width: 1600px  
-    padding: 0 20px
+    width: 100%
+    max-width: 100%  
+    box-sizing: border-box
+    padding: 0 10px
     margin: 0 auto
+    overflow: hidden
+
+.flex-screen
+    height: calc(100vh - 124px)
+    display: flex
+    justify-content: center
+    align-items: center
 
 a
     transition: .3s ease
@@ -47,30 +59,50 @@ ul li
     list-style: none
 
 
+//---------------------------------------
 //           ========== HEADER ==========
+//---------------------------------------
 
 header 
     display: block
     height: 80px
+    margin-top: 20px
+    margin-bottom: 50px
 
 // Logo
 
-.logo
-    display: block
-    object-fit: cover
-    object-position: center
-    width: 260px
+.brand
+    height: 100px
+    overflow: hidden
+    width: 280px
     float: left
 
+.logo
+    display: block
+    text-align: center
+    object-fit: contain
+    object-position: center      
+
+.shutter 
+    opacity: .1
+
+
+.logoimg
+    width: 280px
+
+
+.shut1
+    top: -80px
+    position: relative
+    width: 80px
+    z-index: -1
+
 @media (max-width: 767px) 
-    .logo
-        width: 200px
+    .shut1, .shut2, .shut3 
+            left: 50
 
 
-
-// Navigation
-
-//  -desktop
+// Navigation - desktop
 .desktop-nav
     display: block
     text-align: right
@@ -97,10 +129,11 @@ header
                 padding-right: none
                 margin-left: none
         li:hover a
-                border: 1px solid $lite
-                color: $text
+            background: $light
+            color: $text
+            text-decoration: none
         .current-menu-item a, .current-menu-item a:hover
-            color: red
+            color: $linkH
     ul:before, ul:after
         content: ""
         display: table
@@ -108,23 +141,24 @@ header
         clear: both
 
 
-//  -mobile
+// Navigation - mobile
 .burger, .mobile-nav
         display: none
 
-@media (max-width: 767px)
+@media (max-width: 996px)
 
     .mobile-nav
-        z-index: 1000
         display: block
         position: fixed
         top: 0
         right: -260px
         width: 260px
-        height: 100vh
+        height: 100%
         background: $trans
         // box-shadow: 0 10px 16px #aaa
         transition: .3s ease
+        overflow: visible
+        z-index: 1000
         h3
             text-align: center
             padding-top: 60px
@@ -147,6 +181,7 @@ header
             li:last-of-type
                 border-bottom: none
 
+
     .social-box
         display: flex
         justify-content: center
@@ -166,8 +201,8 @@ header
     .burger
         display: block
         position: fixed
-        top: 20px
-        right: 20px
+        top: 26px
+        right: 12px
         line-height: 30px
         font-size: 2em
         padding: 0
@@ -175,6 +210,7 @@ header
         cursor: pointer
         background: none
         border: none
+        text-shadow: 0 2px 0 white
 
         p
             padding: 0
@@ -183,21 +219,354 @@ header
             top: -1px
 
 
-//           ========== BODY ==========
+//-------------------------------------
+//           ========== HOME ==========
+//-------------------------------------
 
-.container
-    padding: 0 10px
 
 // Slick carousel
-
 .slideshow
     display: block
+    z-index: 1
     img 
-        height: calc(90vh - 112px)
+        height: 60vh
         margin: 1px
+        margin: 2vh 1px 10vh 1px
+
+.slick-list
+    overflow: visible
 
 
+//----------------------------------------
+//           ========== GALLERY ==========
+//----------------------------------------
 
+.album-heading 
+    margin-top: 12vh
+    text-transform: uppercase
+
+.gallery-box
+    display: flex
+    align-items: none
+    justify-content: center
+    overflow: hidden
+    width: 100%
+    margin: 30px auto 19vh auto
+    text-align: center
+    .gallery-cover
+        // float: left
+        position: relative
+        margin: 5px
+        img
+            width: 360px
+            height: 360px
+            display: block
+            object-fit: cover
+            object-position: top
+            cursor: pointer
+        img:hover 
+        .overlay 
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            background-color: $transBlack
+            color: #fff
+            overflow: hidden
+            width: 100%
+            height: 100%
+            -webkit-transform: scaleY(0)
+            transition: .3s ease
+            display: grid 
+            place-items: center
+
+    .gallery-cover:hover 
+        .overlay 
+            transform: scaleY(1)
+
+@media (max-width: 1099px) 
+    .gallery-box 
+        align-items: center
+        flex-direction: column
+        .gallery-cover 
+            margin: 20px auto
+            .overlay 
+                transform: scale(1)
+                height: 30%
+
+.gallery
+    column-count: 4
+    column-gap: .6em 
+    // width: 100%
+    .gallery-item 
+        display: inline-block
+        margin: 0 0 .6em
+        width: 100%
+        img 
+            width: 100%
+            height: 100%
+
+@media (max-width: 1110px) 
+    .gallery 
+        column-count: 3
+
+@media (max-width: 996px) 
+    .gallery 
+        column-count: 2
+
+@media (max-width: 767px) 
+    .gallery 
+        column-count: 1
+    
+
+
+//--------------------------------------
+//           ========= PRICING =========
+//--------------------------------------
+
+.boardhead 
+    text-align: center
+    padding: 20px 60px
+    max-width: 800px
+    margin: 0 auto 20px auto
+    background: $light
+    display: flex 
+    justify-content: space-around
+    i 
+        padding-right: 15px
+        font-size: 2.8em
+        line-height: 90px
+        opacity: .2
+    p 
+        padding: 10px 20px
+        margin-bottom: 0
+
+.price-board 
+    display: block
+    max-width: 1080px
+    overflow: auto
+    margin: 0 auto 
+
+.price-box 
+    width: 360px
+    padding: 0
+    margin: 30px 0 100px 0
+    transition: .3s ease
+    float: left
+    :last-of-type
+        float: none 
+    h2 
+        padding: 20px
+        display: block 
+        text-align: center
+        margin: 0
+        line-height: .8
+        color: white
+        background: $darkL
+        transition: .3s ease
+        span 
+            font-size: .7em
+    h5 
+        text-align: center
+        font-size: .8em
+        padding: 10px
+        margin-bottom: 15px
+        background: $lite
+    ul 
+        margin-bottom: 20px
+        li 
+            padding: 3px 10px
+            line-height: 1.3
+            p 
+                margin: 0
+                font-size: .8em
+                // display: inline-block
+            span 
+                padding: 0 20px
+    ul li:nth-of-type(odd)
+        background: $light
+    .price 
+        text-align: center
+        padding: 10px 10px 20px 10px
+        color: white
+        background: $darkL
+        transition: .3s ease
+
+.highlight .price-box
+    position: relative 
+    top: -20px
+    box-shadow: 0 0 15px rgba(0,0,0,.2)
+    z-index: 1000
+
+.lowlight 
+    .price-box 
+        position: relative 
+        top: 12px
+        box-shadow: 0 0 15px rgba(0,0,0,.2)
+        z-index: 100
+        h2, h5 
+            margin-bottom: 0px
+            font-size: 1.1em
+            padding: 26px 20px 20px 20px 
+        .price 
+            padding: 30px 10px
+        .otherphoto
+            padding-bottom: 10px
+        button 
+            position: relative
+            top: 0
+            width: 160px
+            height: 40px 
+            border: none 
+            border-radius: 20px 
+            background: $light
+            margin: 20px auto
+            cursor: pointer
+            transition: .3s ease 
+        button:hover 
+            top: 5px
+            box-shadow: 0 0 26px rgba(0,0,0,.6)
+
+.otherphoto 
+    display: inline-block
+    text-align: center 
+    font-size: .8em 
+    padding: 0 20px
+    background: $lite
+
+@media (max-width: 1080px)
+    .price-box 
+        width: 302px
+
+@media (max-width: 996px) 
+    .price-box 
+        float: none 
+        width: 100%
+    
+
+//--------------------------------------
+//           ========== ABOUT ==========
+//--------------------------------------
+
+.about 
+    margin-bottom: 10vh
+    border: 1px solid $dark
+
+    .flex-about 
+        height: 480px
+
+    .about-img 
+        float: left
+        img 
+            height: 480px
+            overflow: hidden
+
+    .about-text
+        width: 60%
+        h1 
+            padding-top: 40px
+        h3 
+            padding-top: 30px
+        p 
+            display: block
+            text-align: justify
+            padding-bottom: 30px
+        img
+            display: none 
+
+@media (max-width: 996px) 
+    .about
+        border: none
+        .flex-about 
+            height: auto
+        .about-img 
+            display: none
+            margin: 20px auto
+        .about-text
+            width: 86%
+            .about-img-mobile
+                display: grid
+                justify-content: center
+                img
+                    width: 100%
+                    max-width: 360px
+                    display: block
+ 
+
+//----------------------------------------
+//           ========== CONTACT ==========
+//----------------------------------------
+
+.contact-info 
+    margin-bottom: 20px
+    i 
+        font-size: 2em
+        padding: 20px
+        margin: 20px 0
+        opacity: .6
+        h1 
+            padding: 20px 10px
+    
+.contact-box 
+    input, textarea
+        background: $lite
+        border: none
+        padding: 10px
+        margin: 1px 0
+
+.form .row
+    margin: 0
+    
+.actions 
+    input
+        color: white 
+        background-color: $darkL
+        transition: .3s ease
+        text-transform: uppercase
+        cursor: pointer
+    input:hover
+        background: $dark
+    .reset 
+        border-left: 1px solid white
+
+@media (max-width: 767px)
+    .spacetop
+        width: 100%
+        height: 0
+    .spacebottom
+        width: 100%
+        height: 40px
+
+@media (max-width: 1080px)
+    .spacetop
+        width: 100%
+        height: 60px
+    .spacebottom
+        width: 100%
+        height: 60px
+
+@media (min-width: 1081px)
+    .spacetop
+        width: 100%
+        height: 14vh
+    .spacebottom
+        width: 100%
+        height: 20vh
+
+//---------------------------------------
+//           ========== FOOTER ==========
+//---------------------------------------
+
+.footer 
+    position: relative
+    display: block
+    width: 100%
+    text-align: left
+    opacity: .6
+    z-index: 1
+    p 
+        padding: 30px 10px 10px 10px 
+        margin-bottom: 0
 
 
 
