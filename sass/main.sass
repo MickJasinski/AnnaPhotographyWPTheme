@@ -1,5 +1,6 @@
 // Imports
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700')
+@import url('https://fonts.googleapis.com/css?family=Caveat&subset=latin-ext')
 
 
 // Variables
@@ -31,13 +32,13 @@ body
     font-family: 'Lato', sans-serif
     color: $text
 
-.container
-    width: 100%
-    max-width: 100%  
-    box-sizing: border-box
-    padding: 0 10px
-    margin: 0 auto
-    overflow: hidden
+// .container
+//     width: 100%
+//     max-width: 100%  
+//     box-sizing: border-box
+//     padding: 0 10px
+//     margin: 0 auto
+//     overflow: hidden
 
 .flex-screen
     height: calc(100vh - 124px)
@@ -53,7 +54,7 @@ a:link, a:visited
     color: $link
 
 a:hover
-    color: $linkH
+    color: #bbb
 
 ul li 
     list-style: none
@@ -305,16 +306,20 @@ header
         img 
             width: 100%
             height: 100%
+            transition: .4s ease 
+            opacity: .9
+        img:hover 
+            opacity: .77
 
 @media (max-width: 1110px) 
     .gallery 
         column-count: 3
 
-@media (max-width: 996px) 
+@media (max-width: 768px) 
     .gallery 
         column-count: 2
 
-@media (max-width: 767px) 
+@media (max-width: 565px) 
     .gallery 
         column-count: 1
     
@@ -348,6 +353,7 @@ header
     margin: 0 auto 
 
 .price-box 
+    background: white
     width: 360px
     padding: 0
     margin: 30px 0 100px 0
@@ -449,48 +455,75 @@ header
 //--------------------------------------
 
 .about 
-    margin-bottom: 10vh
-    border: 1px solid $dark
+    overflow: auto
+    margin: 8vh auto
 
-    .flex-about 
-        height: 480px
+.about-text 
+    float: left
 
-    .about-img 
-        float: left
+.about-img 
+    display: flex 
+    justify-content: center 
+    align-items: center
+    height: 55vh
+    .about-item
+        text-align: right
         img 
-            height: 480px
-            overflow: hidden
-
-    .about-text
-        width: 60%
-        h1 
-            padding-top: 40px
+            display: block 
+            width: 300px 
+            height: 300px
+            object-position: top 
+            object-fit: cover 
+            border-radius: 50%
         h3 
-            padding-top: 30px
-        p 
-            display: block
-            text-align: justify
-            padding-bottom: 30px
-        img
-            display: none 
+            font-family: 'Caveat', cursive
+            font-size: 2.5rem
+            transform: rotate(-10deg)
+            padding-top: 20px
 
-@media (max-width: 996px) 
-    .about
-        border: none
-        .flex-about 
-            height: auto
-        .about-img 
-            display: none
-            margin: 20px auto
-        .about-text
-            width: 86%
-            .about-img-mobile
-                display: grid
-                justify-content: center
-                img
-                    width: 100%
-                    max-width: 360px
-                    display: block
+// .about 
+//     margin-bottom: 10vh
+//     border: 1px solid $dark
+
+//     .flex-about 
+//         height: 480px
+
+//     .about-img 
+//         float: left
+//         img 
+//             height: 480px
+//             overflow: hidden
+
+//     .about-text
+//         width: 60%
+//         h1 
+//             padding-top: 40px
+//         h3 
+//             padding-top: 30px
+//         p 
+//             display: block
+//             text-align: justify
+//             padding-bottom: 30px
+//         img
+//             display: none 
+
+// @media (max-width: 996px) 
+//     .about
+//         border: none
+//         .flex-about 
+//             height: auto
+//         .about-img 
+//             display: none
+//             margin: 20px auto
+//         .about-text
+//             width: 86%
+//             .about-img-mobile
+//                 display: grid
+//                 justify-content: center
+//                 img
+//                     width: 100%
+//                     max-width: 360px
+//                     display: block
  
 
 //----------------------------------------
@@ -508,6 +541,7 @@ header
             padding: 20px 10px
     
 .contact-box 
+    margin-bottom: 40px
     input, textarea
         background: $lite
         border: none

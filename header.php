@@ -20,9 +20,10 @@
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/AnnaPhotography/slick-1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/AnnaPhotography/slick-1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="/wp-content/themes/AnnaPhotography/css/fade-in.css">
+    <link rel="stylesheet" href="/wp-content/themes/AnnaPhotography/css/main.css">
 </head>
 <body <?php body_class(); ?>>
-    <div class="container">
+    <div class="container-fluid">
 
             <!-- Header starts here -->
         <header class="sitedesktopdesktopdesktop-header fade-in">

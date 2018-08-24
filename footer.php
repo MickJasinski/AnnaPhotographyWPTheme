@@ -1,7 +1,7 @@
         </div>
         <div class="footer">
             <footer class="fade-in one">
-                <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
+                <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?> | <a href="/tc">T&C</a> </p>
             </footer>
         </div>
     </div> <!-- .container -->

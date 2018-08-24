@@ -2,14 +2,39 @@
 
 get_header(); ?>
 
+<div class="about container">
+    <div class="about-text col-sm-12 col-lg-6 text-center fade-in one">
+        <!-- The loop -->
+        <?php
+        if (have_posts()) :
+            while (have_posts()) : the_post(); ?>
 
-<div class="about">
-
-    <div class="about-img">
-        <img class="fade-in one" src="/wp-content/themes/AnnaPhotography/imgs/about/AKMfota.jpg" alt="Anna Photography | Family & Portrait Photographer"></img>
+        <!-- This brings up the content. -->
+        <p><?php the_content(); ?></p>
+        
+        <?php endwhile;
+            else:
+                echo '<p>No content found</p>';            
+        endif; ?>
     </div>
+
+    <div class="about-img col-sm-12 col-lg-6">
+        <div class="about-item">
+            <img class="fade-in two" src="/wp-content/themes/AnnaPhotography/imgs/about/AKMfota.jpg" alt="Anna Photography | Family & Portrait Photographer" />
+            <h3><span class="fade-in three">Anna</span> <span class="fade-in four">Kubrynska</span></h3>
+        </div>
+    </div>
+
+
+
     
-    <div class="about-content">
+    
+    
+    
+    <!-- <div class="about-img col-sm col-md-6">
+    </div> -->
+    
+    <!-- <div class="about-content">
         <div class="flex-screen flex-about">
             <div class="about-text fade-in two">
                 <h1>Thank you for stopping by!</h1>
@@ -23,7 +48,7 @@ get_header(); ?>
             tel.: 07592432324</p>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 
