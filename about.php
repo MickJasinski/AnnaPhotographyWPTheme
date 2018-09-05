@@ -18,10 +18,13 @@ get_header(); ?>
         endif; ?>
     </div>
 
+    <!-- <div class="contact">
+        <a href="/contact"><button>Get in touch!</button></a>
+    </div> -->
+
     <div class="about-img col-sm-12 col-lg-6">
         <div class="about-item">
             <img class="fade-in two" src="/wp-content/themes/AnnaPhotography/imgs/about/AKMfota.jpg" alt="Anna Photography | Family & Portrait Photographer" />
-            <h3><span class="fade-in three">Anna</span> <span class="fade-in four">Kubrynska</span></h3>
         </div>
     </div>
 
