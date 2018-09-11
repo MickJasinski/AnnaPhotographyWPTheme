@@ -14,11 +14,16 @@ if (have_posts()) :
     <?php endwhile;
 
     else:
-        echo '<p>No content found</p>';
 
-    endif; ?>
+echo<<<END
+    
+    <div class="code404">
+        <h2>Sorry, this page doesn't exist (404)</h2>
+    </div>
 
-
+END;
+    
+endif; ?>
 
 <?php
     get_footer();
