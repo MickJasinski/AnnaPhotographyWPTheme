@@ -24,13 +24,10 @@
         <button class="burger"><p>&#9776;</p></button>
     </div>
 <?php wp_footer(); ?>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="/wp-content/themes/AnnaPhotography/slick-1.8.1/slick/slick.min.js"></script>
-
-<!-- <script
-  src="http://anna-photography.local/wp-content/themes/AnnaPhotography/scripts/jquery-3.3.1.min.js"></script> -->
-<script src="http://anna-photography.local/wp-content/themes/AnnaPhotography/bootstrap/js/bootstrap.min.js"></script>
+<script src="/wp-content/themes/AnnaPhotography/bootstrap/js/bootstrap.min.js"></script>
 <script src="/wp-content/themes/AnnaPhotography/scripts/main.js" type="text/javascript"></script>
 
 </body>
