@@ -1,7 +1,9 @@
         </div>
         <div class="footer">
             <footer class="fade-in one">
-                <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?> | <a href="/tc">T&C</a> &nbsp <a href="https://www.facebook.com/Anna-Kubrynska-Photography-178266749419791"><img class="social" src="/wp-content/themes/AnnaPhotography/imgs/social/facebook.png" alt="facebook-icon"></a> </p>
+                <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?> | <a href="/tc">T&C</a> &nbsp 
+                <a href="https://www.facebook.com/Anna-Kubrynska-Photography-178266749419791">
+                <i class="fab fa-facebook-f"></i></a> </p>
             </footer>
         </div>
     </div> <!-- end of .container -->

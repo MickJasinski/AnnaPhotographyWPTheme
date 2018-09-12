@@ -14,7 +14,7 @@ get_header(); ?>
             <h3>...or fill the form:</h3>
         </div>   
         <div class="contact-form col-sm-12 col-xl-6">
-            <form class="form" method="post" name="contactform" action="mail.php">
+            <form class="form" method="post" name="contactform" action="/mail.php">
                 <div class="field">
                     <input class="field col-sm" placeholder="Name" type="text" name="name" id="name" required/>
                 </div>
